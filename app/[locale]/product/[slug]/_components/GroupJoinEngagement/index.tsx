@@ -1,7 +1,6 @@
 import React from "react";
 import { Section } from "../../_libs/types";
 import Image from "next/image";
-import { time } from "console";
 import Link from "next/link";
 
 const GroupJoinEngagement: React.FC<{ engagement: Section }> = ({

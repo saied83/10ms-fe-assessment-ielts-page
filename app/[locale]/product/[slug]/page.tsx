@@ -1,9 +1,6 @@
-import { PhoneIcon } from "@/app/assets/icons";
 import CheckList from "./_components/CheckList";
 import CTA from "./_components/CTA";
-import Description from "./_components/Description";
-import Title from "./_components/Title";
-import Trailer from "./_components/Trailer";
+
 import { fetchProduct } from "./_libs/api";
 import SectionNavigation from "./_components/SectionNavigation";
 import Instructor from "./_components/Instructor";
@@ -21,7 +18,7 @@ import ContentWrapper from "./_components/ContentWrapper";
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string; locale: string };
+  params: Promise<{ slug: string; locale: "en" | "bn" }>;
 }): Promise<Metadata> {
   const { slug, locale } = await params;
 

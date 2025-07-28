@@ -1,9 +1,9 @@
 export interface FetchProductResponse {
   code: number;
   data: ProductData;
-  error: any[];
+
   message: string;
-  payload: any[];
+
   status_code: number;
 }
 
@@ -23,7 +23,7 @@ export interface ProductData {
   cta_text: CtaText;
   sections: Section[];
   is_cohort_based_course: boolean;
-  secondary_cta_group: any[];
+
   delivery_method: string;
 }
 

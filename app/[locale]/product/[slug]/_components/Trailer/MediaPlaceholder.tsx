@@ -23,7 +23,11 @@ const MediaPlaceholder: React.FC<{
           >
             <Image
               alt={item.name}
-              src={isVideo ? item.thumbnail_url : item.resource_value}
+              src={
+                isVideo
+                  ? (item.thumbnail_url as string)
+                  : (item.resource_value as string)
+              }
               width={55}
               height={20}
               className="w-full h-full object-cover"

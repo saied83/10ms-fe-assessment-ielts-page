@@ -1,36 +1,116 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Frontend Engineer (Level 1) Assessment
 
-## Getting Started
+This is my submission for the Frontend Engineer (Level 1) assessment, where I built a product page similar to the [IELTS Course by Munzereen Shahid](https://10minuteschool.com/product/ielts-course/) page using React, Next.js, and TailwindCSS.
 
-First, run the development server:
+---
+
+## About This Project
+
+I designed and developed this product page by fetching course data from a public API provided by 10 Minute School. The page supports English and Bangla languages, uses server-side rendering (SSR) for SEO, and includes all the required sections based on the API data.
+
+---
+
+## Features I Implemented
+
+- Dynamic **product title** and **description** (rendered as HTML).
+- Display of **course instructors** from API sections.
+- Embedded **YouTube trailer** using media data.
+- Default price set to 1000 (as price data was not provided).
+- Dynamic **call-to-action (CTA)** text from the API.
+
+- Server-Side Rendering (SSR) and Incremental Static Regeneration (ISR) with Next.js.
+- Sections like **features**, **what you will learn**, **exclusive features**, and **course details** from the API.
+- Checklist rendered based on the checklist array.
+- SEO tags and Open Graph metadata using the API’s SEO data (requires special header).
+
+---
+
+## Tech Stack
+
+- React + Next.js for SSR and routing
+- TypeScript for type safety
+- TailwindCSS for styling and responsiveness
+- Modular, reusable React components organized by feature
+- Fetching data securely with proper headers for SEO
+- Incremental Static Regeneration (ISR) for up-to-date static content
+
+---
+
+## Project Structure Overview
+
+```
+├── [locale]
+│   └── product
+│       └── [slug]
+│           ├── _components       # Components for each section (About, CTA, Trailer, etc.)
+│           ├── _libs             # API calls and TypeScript types
+│           └── page.tsx          # Main product page
+├── assets
+│   └── icons                   # SVG icon components
+├── components
+│   └── Navbar                  # Navigation and language switcher
+├── globals.css                # Global Tailwind styles
+├── layout.tsx                 # Root layout
+└── page.tsx                   # Entry point
+```
+
+---
+
+## How to Run This Project Locally
+
+1. Clone the repository and install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+2. Run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Open your browser to [http://localhost:3000/en/product/ielts-course](http://localhost:3000/en/product/ielts-course) for English version, or `/bn/product/ielts-course` for Bangla.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Build & Deployment
 
-## Learn More
+- This project supports SSR and ISR for performance and SEO.
+- SEO meta tags are dynamically generated using API data.
+- I have included a Dockerfile for containerized deployment (optional to use).
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## What I Focused On
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Clean and maintainable React components with reusable pieces.
+- Proper use of TypeScript to type API data and props.
+- Server-side rendering and localization support.
+- Responsive and accessible UI using TailwindCSS.
+- Efficient data fetching with correct headers for SEO.
+- Code splitting and performance optimization.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Submission Details
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Built with React, Next.js, TypeScript, and TailwindCSS.
+- Dockerfile included for easier deployment.
+- Deadline: 28th July, 11:59 PM.
+
+---
+
+## Contact
+
+Feel free to reach out if you have any questions or feedback!
+
+**Md Saiedur Rahman Saied (/saied83)**
+
+---
+
+Thank you for reviewing my project!
