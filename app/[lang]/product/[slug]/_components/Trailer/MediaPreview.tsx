@@ -31,7 +31,7 @@ const MediaPreview: React.FC<{
           src={`https://www.youtube.com/embed/${resource_value}?rel=0&autoplay=1`}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
-          className="w-full h-full object-cover rounded-xl md:rounded-none"
+          className="w-full h-full object-cover rounded-xl md:rounded-none z-50"
           title="Embedded YouTube"
         />
       );
@@ -39,7 +39,7 @@ const MediaPreview: React.FC<{
 
     return (
       <Image
-        src={thumbnail_url}
+        src={thumbnail_url as string}
         alt={name}
         className="w-full aspect-video object-cover rounded-xl md:rounded-none"
         width={768}
@@ -77,7 +77,7 @@ const MediaPreview: React.FC<{
           type="button"
           onClick={() => setPlayVideo(true)}
         >
-          <MediaPlayIcon />
+          <MediaPlayIcon className="#1CAB55" />
         </button>
       )}
     </section>

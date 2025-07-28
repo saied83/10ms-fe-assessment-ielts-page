@@ -39,7 +39,7 @@ export interface Medum {
   name: string;
   resource_type: SingleMediaType;
   resource_value: string;
-  thumbnail_url: string;
+  thumbnail_url?: string;
 }
 
 export type SingleMediaType = "video" | "image";

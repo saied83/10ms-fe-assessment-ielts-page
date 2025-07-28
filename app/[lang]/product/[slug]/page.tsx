@@ -5,6 +5,14 @@ import Description from "./_components/Description";
 import Title from "./_components/Title";
 import Trailer from "./_components/Trailer";
 import { fetchProduct } from "./_libs/api";
+import SectionNavigation from "./_components/SectionNavigation";
+import Instructor from "./_components/Instructor";
+import Features from "./_components/Features";
+import GroupJoinEngagement from "./_components/GroupJoinEngagement";
+import WhatWillLearn from "./_components/WhatWillLearn";
+import About from "./_components/About";
+import ExclusiveFeature from "./_components/ExclusiveFeature";
+import Testimonials from "./_components/Testimonials";
 
 export default async function Page({
   params,
@@ -13,10 +21,9 @@ export default async function Page({
 }) {
   const { slug, lang } = await params;
   const data = (await fetchProduct(slug, lang)).data;
-  console.log(data);
 
   return (
-    <main className="w-full">
+    <main className="w-full" id="instructor">
       <section
         className="w-full  flex justify-center h-max"
         style={{
@@ -46,7 +53,7 @@ export default async function Page({
               <p className="justify-between absolute -bottom-10 left-0 right-0 hidden mt-4 text-sm text-center text-gray-400 md:flex md:flex-col lg:flex lg:flex-row">
                 <span>কোর্সটি সম্পর্কে বিস্তারিত জানতে</span>
                 <span className="flex items-center justify-center ml-2 underline cursor-pointer text-green-600">
-                  <PhoneIcon />
+                  <PhoneIcon className="fill-green-600" />
                   <span className="ml-1">ফোন করুন (16910)</span>
                 </span>
               </p>
@@ -56,6 +63,66 @@ export default async function Page({
       </section>
       <CTA className="block md:hidden" />
       <CheckList checkLists={data.checklist} className="block md:hidden" />
+      <section className="w-full  flex justify-center  relative">
+        <section className="max-w-[1200px] w-full">
+          <section className="w-full md:max-w-[calc(100%-378px)] lg:max-w-[calc(100%-448px)] px-4">
+            <SectionNavigation />
+            <div className="w-full h-2 rounded-sm bg-gray-200 md:hidden"></div>
+            <div className="w-full ">
+              {data.sections.map((eachSection) => {
+                switch (eachSection.type) {
+                  case "instructors": {
+                    return (
+                      <Instructor
+                        instructors={eachSection}
+                        key={"instructors"}
+                      />
+                    );
+                  }
+                  case "features": {
+                    return <Features features={eachSection} key={"features"} />;
+                  }
+                  case "group_join_engagement": {
+                    return (
+                      <div key={"group_join_engagement"}>
+                        <GroupJoinEngagement engagement={eachSection} />
+                      </div>
+                    );
+                  }
+                  case "pointers": {
+                    return (
+                      <div key={"pointers"}>
+                        <WhatWillLearn whatLearnData={eachSection} />
+                      </div>
+                    );
+                  }
+                  case "about": {
+                    return (
+                      <div key={"about"}>
+                        <About aboutData={eachSection} />
+                      </div>
+                    );
+                  }
+                  case "feature_explanations": {
+                    return (
+                      <div key={"feature_explanations"}>
+                        <ExclusiveFeature exclusiveData={eachSection} />
+                      </div>
+                    );
+                  }
+                  case "testimonials": {
+                    return (
+                      <div key={"testimonials"}>
+                        <Testimonials testimonial={eachSection} />
+                      </div>
+                    );
+                  }
+                }
+              })}
+            </div>
+          </section>
+        </section>
+      </section>
     </main>
   );
 }

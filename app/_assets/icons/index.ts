@@ -6,3 +6,5 @@ export { default as ArrowDownIcon } from "./ArrowDownIcon";
 export { default as PlayButtonIcon } from "./PlayButtonIcon";
 export { default as MediaArrowIcon } from "./MediaArrowIcon";
 export { default as MediaPlayIcon } from "./MediaPlayIcon";
+export { default as CheckIcon } from "./CheckIcon";
+export { default as QuoteIcon } from "./QuoteIcon";
