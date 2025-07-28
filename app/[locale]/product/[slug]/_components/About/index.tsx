@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Section } from "../../_libs/types";
-import { ArrowDownIcon } from "@/app/_assets/icons";
+import { ArrowDownIcon } from "@/app/assets/icons";
 
 const About: React.FC<{ aboutData: Section }> = ({ aboutData }) => {
   const [openIds, setOpenIds] = useState<string[]>([]);

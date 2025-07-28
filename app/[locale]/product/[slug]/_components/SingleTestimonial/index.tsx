@@ -1,5 +1,5 @@
 "use client";
-import { MediaPlayIcon, QuoteIcon } from "@/app/_assets/icons";
+import { MediaPlayIcon, QuoteIcon } from "@/app/assets/icons";
 import Image from "next/image";
 import React, { useState } from "react";
 import { Value } from "../../_libs/types";

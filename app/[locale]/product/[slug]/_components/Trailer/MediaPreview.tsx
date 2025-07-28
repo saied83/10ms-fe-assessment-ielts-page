@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Medum } from "../../_libs/types";
 import Image from "next/image";
-import { MediaArrowIcon, MediaPlayIcon } from "@/app/_assets/icons";
+import { MediaArrowIcon, MediaPlayIcon } from "@/app/assets/icons";
 
 const MediaPreview: React.FC<{
   singleMedia: Medum;

@@ -1,4 +1,4 @@
-import { PhoneIcon, SearchIcon } from "@/app/_assets/icons";
+import { PhoneIcon, SearchIcon } from "@/app/assets/icons";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 const RightControls = () => {

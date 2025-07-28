@@ -1,4 +1,4 @@
-import { CheckIcon } from "@/app/_assets/icons";
+import { CheckIcon } from "@/app/assets/icons";
 import Image from "next/image";
 import React from "react";
 import { Section } from "../../_libs/types";

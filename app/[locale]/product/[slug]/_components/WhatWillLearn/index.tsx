@@ -1,6 +1,6 @@
 import React from "react";
 import { Section } from "../../_libs/types";
-import { CheckIcon } from "@/app/_assets/icons";
+import { CheckIcon } from "@/app/assets/icons";
 
 const WhatWillLearn: React.FC<{ whatLearnData: Section }> = ({
   whatLearnData,

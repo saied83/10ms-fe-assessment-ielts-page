@@ -1,4 +1,4 @@
-import { ArrowDownIcon } from "@/app/_assets/icons";
+import { ArrowDownIcon } from "@/app/assets/icons";
 
 const links = [
   "Class 6-12",

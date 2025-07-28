@@ -1,4 +1,4 @@
-import { MenuIcon } from "@/app/_assets/icons";
+import { MenuIcon } from "@/app/assets/icons";
 import Image from "next/image";
 
 const Logo = () => {

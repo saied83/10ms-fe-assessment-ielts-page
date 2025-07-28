@@ -1,20 +1,32 @@
 "use client";
 
-import { BanglaIcon } from "@/app/_assets/icons";
+import { BanglaIcon } from "@/app/assets/icons";
 import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const LanguageSwitcher = () => {
   const pathname = usePathname();
   const router = useRouter();
+  const [currentLang, setCurrentLang] = useState<string>("en");
 
-  const currentLang = pathname?.split("/")[1];
+  useEffect(() => {
+    if (!pathname) return;
+    const langFromPath = pathname.split("/")[1];
+    setCurrentLang(langFromPath);
+  }, [pathname]);
+
   const nextLang = currentLang === "bn" ? "en" : "bn";
 
   const toggleLang = () => {
     if (!pathname) return;
+
+    // Set locale cookie
+    document.cookie = `NEXT_LOCALE=${nextLang}; path=/; max-age=31536000`;
+
     const segments = pathname.split("/");
-    segments[1] = nextLang; // Switch language
+    segments[1] = nextLang;
     const newPath = segments.join("/");
+
     router.push(newPath);
   };
 
